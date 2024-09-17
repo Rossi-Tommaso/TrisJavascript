@@ -1,0 +1,30 @@
+:root {
+    --primary-color: #3B28CC;
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.startTheGame{
+    width: 30%;
+    height: 30%;
+    -webkit-box-reflect: below
+        1px linear-gradient(transparent, #0005);
+        box-shadow: 0 0 5px var(--primary-color), 0 0 15px var(--primary-color), 0 0 25px var(--primary-color), 0 0 100px var(--primary-color);
+    background-color: var(--primary-color);
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 5rem;
+    text-decoration: none;
+    font-family: 'Press Start 2P', cursive;
+}
