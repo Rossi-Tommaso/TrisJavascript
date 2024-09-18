@@ -1,13 +1,13 @@
-body {
+body{
     margin: 0;
-    border: 0;
-    padding: 0;
     height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
 }
+
 
 .container {
     width: 50%;
@@ -19,8 +19,12 @@ body {
 
 .item {
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 .icon {
-    display: none;
+    width: 90%;
+    aspect-ratio: 1;
 }

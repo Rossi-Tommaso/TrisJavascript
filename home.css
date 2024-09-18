@@ -1,5 +1,6 @@
 :root {
     --primary-color: #3B28CC;
+    --secondary-color: #2D2D2A;
 }
 
 body{
@@ -9,16 +10,21 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-image: radial-gradient(circle at center center, rgb(0,0,0),rgb(8,2,44));
 }
 
 .startTheGame{
     width: 30%;
     height: 30%;
+    border-radius: 50%;
+    /*
     -webkit-box-reflect: below
         1px linear-gradient(transparent, #0005);
-        box-shadow: 0 0 5px var(--primary-color), 0 0 15px var(--primary-color), 0 0 25px var(--primary-color), 0 0 100px var(--primary-color);
     background-color: var(--primary-color);
+    -webkit-box-reflect: below 0px linear-gradient(transparent, var(--primary-color));
+    */
+    background-color: var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color), 0 0 15px var(--primary-color), 0 0 25px var(--primary-color), 0 0 100px var(--primary-color);
     color: black;
     display: flex;
     align-items: center;
@@ -26,5 +32,18 @@ body{
     font-weight: bold;
     font-size: 5rem;
     text-decoration: none;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Press Start 2P';
+    transition: background-color 0.75s ease, box-shadow 0.75s ease, color 0.75s ease;
+}
+
+.startTheGame:hover {
+    /*
+    -webkit-box-reflect: below
+        1px linear-gradient(transparent, #0005);
+        box-shadow: 0 0 5px var(--secondary-color), 0 0 15px var(--secondary-color), 0 0 25px var(--secondary-color), 0 0 100px var(--secondary-color);
+    -webkit-box-reflect: below 10px linear-gradient(transparent, var(--secondary-color));
+    */
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 5px var(--secondary-color), 0 0 15px var(--secondary-color), 0 0 25px var(--secondary-color), 0 0 100px var(--secondary-color);
+    color: #BCD8C1;
 }
