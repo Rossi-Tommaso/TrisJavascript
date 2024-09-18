@@ -1,3 +1,8 @@
+:root {
+    --primary-color: #3B28CC;
+    --secondary-color: #2D2D2A;
+}
+
 body{
     margin: 0;
     height: 100vh;
@@ -6,19 +11,22 @@ body{
     justify-content: center;
     align-items: center;
     background-color: white;
+    background-image: radial-gradient(circle, rgb(0,0,0),rgb(8,2,44));
 }
 
 
 .container {
-    width: 50%;
+    width: 40%;
     aspect-ratio: 1;
     display: grid;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto auto;
+    
 }
 
 .item {
-    border: 1px solid black;
+    border: 2.5px solid var(--primary-color);
+    border-radius: 10%;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -27,4 +35,45 @@ body{
 .icon {
     width: 90%;
     aspect-ratio: 1;
+}
+
+#id1, #id2, #id3 {
+    border-top: 0;  
+}
+
+#id7, #id8, #id9 {
+    border-bottom: 0;  
+}
+
+#id1, #id4, #id7 {
+    border-left: 0;  
+}
+
+#id3, #id6, #id9 {
+    border-right: 0;  
+}
+
+.back-button {
+    text-transform: capitalize;
+    align-self: self-end;
+    width: 5%;
+    height: 5%;
+    margin-bottom: 2.5%;
+    border-radius: 25%;
+    background-color: var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color), 0 0 5px var(--primary-color), 0 0 10px var(--primary-color), 0 0 25px var(--primary-color);   
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold; 
+    text-decoration: none;
+    font-family: 'Bungee', sans-serif;
+    transition: background-color 1s ease, box-shadow 1s ease, color 1s ease;
+}
+
+.back-button:hover {
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 5px var(--secondary-color), 0 0 2.5px var(--secondary-color), 0 0 5px var(--secondary-color), 0 0 10px var(--secondary-color);
+    color: #BCD8C1;
 }
