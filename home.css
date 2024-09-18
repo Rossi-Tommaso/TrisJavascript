@@ -10,7 +10,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: radial-gradient(circle at center center, rgb(0,0,0),rgb(8,2,44));
+    background-image: radial-gradient(circle, rgb(0,0,0),rgb(8,2,44));
 }
 
 .startTheGame{
@@ -33,7 +33,7 @@ body{
     font-size: 5rem;
     text-decoration: none;
     font-family: 'Press Start 2P';
-    transition: background-color 0.75s ease, box-shadow 0.75s ease, color 0.75s ease;
+    transition: background-color 1s ease, box-shadow 1s ease, color 1s ease;
 }
 
 .startTheGame:hover {
@@ -44,6 +44,6 @@ body{
     -webkit-box-reflect: below 10px linear-gradient(transparent, var(--secondary-color));
     */
     background-color: var(--secondary-color);
-    box-shadow: 0 0 5px var(--secondary-color), 0 0 15px var(--secondary-color), 0 0 25px var(--secondary-color), 0 0 100px var(--secondary-color);
+    box-shadow: 0 0 5px var(--secondary-color), 0 0 5px var(--secondary-color), 0 0 10px var(--secondary-color), 0 0 25px var(--secondary-color);
     color: #BCD8C1;
 }
