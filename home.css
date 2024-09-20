@@ -5,8 +5,8 @@
 
 body{
     margin: 0;
-    height: 100vh;
-    width: 100vw;
+    height: 100dvh;
+    width: 100dvw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,12 +17,6 @@ body{
     width: 30%;
     height: 30%;
     border-radius: 50%;
-    /*
-    -webkit-box-reflect: below
-        1px linear-gradient(transparent, #0005);
-    background-color: var(--primary-color);
-    -webkit-box-reflect: below 0px linear-gradient(transparent, var(--primary-color));
-    */
     background-color: var(--primary-color);
     box-shadow: 0 0 5px var(--primary-color), 0 0 15px var(--primary-color), 0 0 25px var(--primary-color), 0 0 100px var(--primary-color);
     color: black;
@@ -30,19 +24,13 @@ body{
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    font-size: 5rem;
+    font-size: 5em;
     text-decoration: none;
     font-family: 'Press Start 2P';
     transition: background-color 1s ease, box-shadow 1s ease, color 1s ease;
 }
 
 .startTheGame:hover {
-    /*
-    -webkit-box-reflect: below
-        1px linear-gradient(transparent, #0005);
-        box-shadow: 0 0 5px var(--secondary-color), 0 0 15px var(--secondary-color), 0 0 25px var(--secondary-color), 0 0 100px var(--secondary-color);
-    -webkit-box-reflect: below 10px linear-gradient(transparent, var(--secondary-color));
-    */
     background-color: var(--secondary-color);
     box-shadow: 0 0 5px var(--secondary-color), 0 0 5px var(--secondary-color), 0 0 10px var(--secondary-color), 0 0 25px var(--secondary-color);
     color: #BCD8C1;

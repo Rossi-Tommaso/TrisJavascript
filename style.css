@@ -32,11 +32,6 @@ body{
     align-content: center;
 }
 
-.icon {
-    width: 90%;
-    aspect-ratio: 1;
-}
-
 #id1, #id2, #id3 {
     border-top: 0;  
 }
