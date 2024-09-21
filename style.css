@@ -5,22 +5,23 @@
 
 body{
     margin: 0;
-    height: 100vh;
-    width: 100vw;
+    height: 100dvh;
+    width: 100dvw;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
     background-image: radial-gradient(circle, rgb(0,0,0),rgb(8,2,44));
+    overflow: hidden;
 }
 
 
 .container {
     width: 40%;
+    padding-top: 3%;
     aspect-ratio: 1;
     display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 30% 30% 30% auto;
     
 }
 
@@ -49,10 +50,12 @@ body{
 }
 
 .back-button {
+    margin-top: 15%;
     text-transform: capitalize;
-    align-self: self-end;
-    width: 5%;
-    height: 5%;
+    justify-self: end;
+    grid-column: 3;
+    aspect-ratio: 16/9;
+    width: 35%;
     margin-bottom: 2.5%;
     border-radius: 25%;
     background-color: var(--primary-color);
@@ -68,6 +71,32 @@ body{
 }
 
 .back-button:hover {
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 5px var(--secondary-color), 0 0 2.5px var(--secondary-color), 0 0 5px var(--secondary-color), 0 0 10px var(--secondary-color);
+    color: #BCD8C1;    
+}
+
+.reset-button {
+    margin-top: 15%;
+    border: 0;
+    text-transform: capitalize;
+    aspect-ratio: 16/9;
+    width: 35%;
+    margin-bottom: 2.5%;
+    border-radius: 25%;
+    background-color: var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color), 0 0 5px var(--primary-color), 0 0 10px var(--primary-color), 0 0 25px var(--primary-color);   
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold; 
+    text-decoration: none;
+    font-family: 'Bungee', sans-serif;
+    transition: background-color 1s ease, box-shadow 1s ease, color 1s ease;
+}
+
+.reset-button:hover {
     background-color: var(--secondary-color);
     box-shadow: 0 0 5px var(--secondary-color), 0 0 2.5px var(--secondary-color), 0 0 5px var(--secondary-color), 0 0 10px var(--secondary-color);
     color: #BCD8C1;

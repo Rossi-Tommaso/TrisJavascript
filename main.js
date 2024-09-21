@@ -3,6 +3,7 @@ let giocatore = true;
 let statoGioco = [null, null, null, null, null, null, null, null, null];
 let statoPartita = true;
 
+
 const VITTORIA = [
     [0, 1, 2],
     [3, 4, 5],
@@ -15,27 +16,44 @@ const VITTORIA = [
 ];
 
 function Win() {
-    VITTORIA.forEach((condizione) => {
-        let[a, b, c] = condizione;
-        if(statoGioco[a] && statoGioco[a] === statoGioco[b] && statoGioco[a] === statoGioco[c]) {
-            //il giocatore statoGioco[a] ha vinto
-            //aggiungere messaggio di vittoria
-            alert(`il giocatore ${statoGioco[a]} ha vinto`)
-            statoPartita = false;
-            return
-        }
+  VITTORIA.forEach((condizione) => {
+      let [a, b, c] = condizione;
+      if (statoPartita && statoGioco[a]) { // Controllo che la partita sia ancora in corso e che la casella non sia stata ancora cliccata
+          if (statoGioco[a] === statoGioco[b] && statoGioco[a] === statoGioco[c]) { // Controllo della vittoria
+              statoPartita = false;
+              setTimeout(() => {
+                  alert(`Il giocatore ${statoGioco[a]} ha vinto!`);
+              }, 200);
+              return;
+          }
+      }
+  });
 
-        if (!statoGioco.includes(null)) { //se la tabella non include null (cioé é completa) allora è un pareggio
-            statoPartita = false;
-        }
-    })
+  // Controllo pareggio, solo se la partita è ancora in corso
+  if (statoPartita && !statoGioco.includes(null)) {
+      setTimeout(() => {
+          alert('Pareggio');
+          statoPartita = false;
+      }, 300);
+  }
 }
 
-tabella.forEach((cella, index) => {
+
+tabella.forEach((cella, index) => {//cella é il div, index è la sua posizione nell'array
     cella.addEventListener('click', () => {
       if (!statoGioco[index] && statoPartita) {
         statoGioco[index] = giocatore ? 'X' : 'O';
-        cella.textContent = giocatore ? 'X' : 'O';
+        
+        if(giocatore) {
+          let X = document.createElement('div');
+          X.classList.add('x');
+          cella.appendChild(X);
+        }
+        else{
+          let O = document.createElement('div');
+          O.classList.add('o');
+          cella.appendChild(O);
+        }
         
         Win();
         
@@ -44,6 +62,7 @@ tabella.forEach((cella, index) => {
     });
   });
 
-console.log(tabella);
-console.log(!null)
-
+  
+  document.querySelector('.reset-button').addEventListener('click', () => {
+    location.reload();
+});

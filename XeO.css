@@ -1,0 +1,51 @@
+:root {
+    --primary-color: #3B28CC;
+    --secondary-color: #2D2D2A;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    gap: 50px;
+}
+
+.x {
+    position: relative;
+    align-self: center;
+    width: 80%;
+    aspect-ratio: 1;
+}
+
+.x::before,
+.x::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    background-color: var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color), 0 0 15px var(--primary-color), 0 0 25px var(--primary-color), 0 0 100px var(--primary-color);
+    top: 45%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.x::before {
+    transform: rotate(45deg);
+}
+
+.x::after {
+    transform: rotate(-45deg);
+}
+
+.o {
+    align-self: center;
+    width: 60%;
+    aspect-ratio: 1;
+    border: 20px solid  var(--primary-color);
+    border-radius: 50%; 
+    background-color: transparent;
+    
+}
