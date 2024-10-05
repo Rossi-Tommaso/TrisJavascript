@@ -26,3 +26,11 @@
 ```bash
    npm install -g http-server
 ```
+4. Run the server:
+```bash
+   http-server .
+```
+5. Open this url on your browser:
+```bash
+   http://127.0.0.1:8080/home.html
+```
