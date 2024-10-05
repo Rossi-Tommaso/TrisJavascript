@@ -24,7 +24,7 @@
 ```
 3. Install the HTTP server globally:
 ```bash
-   npm install -g http-server
+   sudo npm install -g http-server
 ```
 4. Run the server:
 ```bash
