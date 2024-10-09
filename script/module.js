@@ -22,11 +22,6 @@ export function Win() {
         if (stato.statoPartita && stato.statoGioco[a]) {
             if (stato.statoGioco[a] === stato.statoGioco[b] && stato.statoGioco[a] === stato.statoGioco[c]) {
                 stato.statoPartita = false;
-
-                const h1 = document.querySelector('.state');
-                if (h1)
-                    h1.remove();
-
                 const newH1 = document.createElement('h1');
                 newH1.className = 'state'
                 newH1.innerText = `${stato.statoGioco[a]} ha vinto!`;
@@ -37,11 +32,7 @@ export function Win() {
     });
 
     if (stato.statoPartita && !stato.statoGioco.includes(null)) {
-
-        const h1 = document.querySelector('.state');
-        if (h1)
-            h1.remove();
-
+        stato.statoPartita = false;
         const newH1 = document.createElement('h1');
         newH1.className = 'state'
         newH1.innerText = `Parità`;
