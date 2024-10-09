@@ -27,6 +27,12 @@ h1 {
                  0px 0px 50px var(--primary-color);
 }
 
+.demo-mode {
+    position: absolute;
+    color: black;
+    top: -5%;
+}
+
 .container {
     width: 40%;
     padding-top: 3%;

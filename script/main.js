@@ -21,11 +21,13 @@ stato.tabella.forEach((cella, index) => {
       if (!stato.statoGioco[index] && stato.statoPartita) {
         stato.statoGioco[index] = stato.giocatore ? 'X' : 'O';
         
-        if(stato.giocatore) {
+        if(stato.giocatore) {// alternanza dei turni
           let X = document.createElement('div');
           X.classList.add('x');
           cella.appendChild(X);
-        } else {
+        } 
+        
+        else {
           let O = document.createElement('div');
           O.classList.add('o');
           cella.appendChild(O);
@@ -39,13 +41,35 @@ stato.tabella.forEach((cella, index) => {
 });
 
 document.querySelector('#reset-button').addEventListener('click', () => {
-    location.reload();
+  const h1 = document.querySelectorAll('h1');
+  if (h1) 
+    h1.forEach((element) => element.remove());
+
+  // stato.statoGioco.forEach((element) => {element = null; console.log(element)});
+  stato.statoGioco.forEach((element, index) => stato.statoGioco[index] = null) //perchè così funziona?
+  console.log(stato.statoGioco)
+  stato.statoPartita = true;
+  stato.giocatore = true;
+  stato.tabella.forEach((element) => element.innerHTML = '');
+
+  document.querySelector('#demo-button').innerHTML = 'demo mode';
+  document.querySelector('#reset-button').innerText = 'reset';
 });
 
-
 document.querySelector('#demo-button').addEventListener('click', () => {
-  let h1 = document.createElement('h1');
-  h1.innerText = 'Demo mode';
-  document.body.appendChild(h1);
+  const h1 = document.querySelector('.state');
+  if (h1)
+     h1.remove(); 
+
+  stato.statoGioco.forEach((element, index) => stato.statoGioco[index] = null);
+  stato.statoPartita = true;
+  stato.giocatore = true;
+  stato.tabella.forEach((element) => element.innerHTML = '');
+
+  const newH1 = document.createElement('h1');
+  newH1.innerText = 'Demo mode';
+  newH1.className = 'demo-mode'
+  document.body.appendChild(newH1);
+
   demoMode();
 });

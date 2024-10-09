@@ -22,20 +22,29 @@ export function Win() {
         if (stato.statoPartita && stato.statoGioco[a]) {
             if (stato.statoGioco[a] === stato.statoGioco[b] && stato.statoGioco[a] === stato.statoGioco[c]) {
                 stato.statoPartita = false;
-                setTimeout(() => {
-                    alert(`Il giocatore ${stato.statoGioco[a]} ha vinto!`);
-                }, 200);
+
+                const h1 = document.querySelector('.state');
+                if (h1)
+                    h1.remove();
+
+                const newH1 = document.createElement('h1');
+                newH1.className = 'state'
+                newH1.innerText = `${stato.statoGioco[a]} ha vinto!`;
+                document.body.appendChild(newH1);
                 return;
             }
         }
     });
 
     if (stato.statoPartita && !stato.statoGioco.includes(null)) {
-        setTimeout(() => {
-            alert('Pareggio');
-            stato.statoPartita = false;
-        }, 300);
+
+        const h1 = document.querySelector('.state');
+        if (h1)
+            h1.remove();
+
+        const newH1 = document.createElement('h1');
+        newH1.className = 'state'
+        newH1.innerText = `Parità`;
+        document.body.appendChild(newH1);
     }
-  }
-  
-//per evitare la riproduzione del codice uso questo modulo per salvare tutte la variabile che verranno 
+}
